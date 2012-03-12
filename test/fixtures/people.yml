@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  first_name: MyString
+  surname: MyString
+  other_names: MyString
+  dob: 2012-03-11
+  date_of_employment: 2012-03-11
+  date_of_resignation: 2012-03-11
+  salary_id: 1
+
+two:
+  first_name: MyString
+  surname: MyString
+  other_names: MyString
+  dob: 2012-03-11
+  date_of_employment: 2012-03-11
+  date_of_resignation: 2012-03-11
+  salary_id: 1

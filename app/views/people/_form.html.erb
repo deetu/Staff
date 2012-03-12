@@ -1,0 +1,64 @@
+<%= form_for @person, :html => {:multipart => true} do |f| %>
+  <% if @person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% @person.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :title_id %><br />
+    <%= f.collection_select :title_id, Title.all, :id, :name, :prompt => "-- Select a Title --" %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :surname %><br />
+    <%= f.text_field :surname %>
+  </div>
+  <div class="field">
+    <%= f.label :other_names %><br />
+    <%= f.text_field :other_names %>
+  </div>
+  <div class="field">
+    <%= f.label :gender_id %><br />
+    <%= f.collection_select :gender_id, Gender.all, :id, :name,:prompt => "-- Select a Gender --" %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :telephone %><br />
+    <%= f.text_field :telephone %>
+  </div>
+  <div class="field">
+    <%= f.label :dob %><br />
+    <%= f.date_select :dob, :start_year => 1960 %>
+  </div>
+  <div class="field">
+    <%= f.label :date_of_employment %><br />
+    <%= f.date_select :date_of_employment, :start_year => 1990 %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :date_of_resignation %><br />
+    <%= f.date_select :date_of_resignation, :start_year => 2005, :use_month_numbers => false, :discard_day => false, :include_blank => 1%>
+  </div>
+  <div class="field">
+    <%= f.label :Positon_id %><br />
+    <%= f.collection_select :salary_id, Salary.all, :id, :department, :prompt => "-- Select a Department --" %>
+  </div>
+  <p>
+    <%= f.file_field :image %>
+  </p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

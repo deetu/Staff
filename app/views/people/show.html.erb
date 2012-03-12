@@ -1,0 +1,59 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @person.title.name %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%= @person.first_name %>
+</p>
+
+<p>
+  <b>Other names:</b>
+  <%= @person.other_names %>
+</p>
+
+<p>
+  <b>Surname:</b>
+  <%= @person.surname %>
+</p>
+
+<p>
+  <b>Dob:</b>
+  <%= @person.dob %>
+</p>
+
+<p>
+  <b>Date of employment:</b>
+  <%= @person.date_of_employment %>
+</p>
+
+<p>
+  <b>Date of resignation:</b>
+  <%= @person.date_of_resignation %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @person.gender.name %>
+</p>
+
+<%= image_tag "#{@person.image_url.to_s}" %>
+<p>
+  <b>Department:</b>
+  <%= @person.salary.department %>
+</p>
+
+<h3>Comments</h3>
+<p><%= render @person.comments %></p>
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+
+
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
