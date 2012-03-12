@@ -1,51 +1,21 @@
-
+# encoding: UTF-8
+<?xml version="1.0" encoding=""?>
+<!DOCTYPE html>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @person.title.name %>
-</p>
+<table border="2" width="800px" cellpadding = "5" align="center" >
+         <caption><h2> Staff Data Page</h2></caption>
+         
+<tr> <th rowspan= "7"><%= image_tag "#{@person.image_url.to_s}" %></th>
+<td><%= @person.title.name %></td> <td><%= @person.surname %></td> <td><%= @person.first_name %></td> <td><%= @person.other_names %></td>
+<tr> <th colspan = "4"> <h4>Personal Information</h4></th></tr>
+<tr> <td colspan = "3"> Gender:</td> <td><%= @person.gender.name %></td></tr>
+<tr> <td colspan = "3"> Date of Birth</td> <td><%= @person.dob %></td></tr>
+<tr> <td colspan = "3"> Employment Date:</td> <td><%= @person.date_of_employment %></td></tr>
+<tr> <td colspan = "3"> Resignation Date</td> <td><%= @person.date_of_resignation %></td></tr>
+<tr> <td colspan = "3"> Present/Last Position Held:</td> <td><%= @person.salary.department %></td></tr>
 
-<p>
-  <b>First name:</b>
-  <%= @person.first_name %>
-</p>
-
-<p>
-  <b>Other names:</b>
-  <%= @person.other_names %>
-</p>
-
-<p>
-  <b>Surname:</b>
-  <%= @person.surname %>
-</p>
-
-<p>
-  <b>Dob:</b>
-  <%= @person.dob %>
-</p>
-
-<p>
-  <b>Date of employment:</b>
-  <%= @person.date_of_employment %>
-</p>
-
-<p>
-  <b>Date of resignation:</b>
-  <%= @person.date_of_resignation %>
-</p>
-
-<p>
-  <b>Gender:</b>
-  <%= @person.gender.name %>
-</p>
-
-<%= image_tag "#{@person.image_url.to_s}" %>
-<p>
-  <b>Department:</b>
-  <%= @person.salary.department %>
-</p>
+</table>
 
 <h3>Comments</h3>
 <p><%= render @person.comments %></p>
