@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Search results
+</title>
+</head>
+<body>
+<h3>Search results</h3>
+<table border="0">
+<tr>
+<td width="40%" border-bottom: 3px solid black><p align="left"><b>Surname</b></td>
+<td width="20%" border-bottom: 3px solid black><p align="left"><b>First Name</b></td>
+<td width="20%" border-bottom: 3px solid black><p align="left"><b>Position</b></td>
+
+</tr>
+<% @person.each do |person| %>
+<tr>
+<td>
+<a href="<%=person.id%>"><%=person.surname%></a>
+</td>
+<td border-bottom: 3px solid black><%= person.first_name %></td>
+<td><%= person.salary.department %></td>
+</tr>
+<% end %>
+</table>
+
+</html>
