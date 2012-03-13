@@ -2,38 +2,43 @@
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>First name</th>
-    <th>Other names</th>
-    <th>Surname</th>
-    <th>Dob</th>
-    <th>Date of employment</th>
-    <th>Date of resignation</th>
-    <th>Position</th>
-    <th>Salary</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th bgcolor = "9999ff"><p><font color="white">Title</p></th>
+    <th bgcolor = "9999ff"><p><font color="white">First name</p></th>
+    <th bgcolor = "9999ff"><p><font color="white">Other name</p></th>
+    <th bgcolor = "9999ff"><p><font color="white">Surname</p></th>
+    <th bgcolor = "9999ff"><p><font color="white">Dob</p></th>
+    <th bgcolor = "9999ff"><p><font color="white">Date of Employment</p></th>
+    <th bgcolor = "9999ff"><p><font color="white">Date of Resignation</p></th>
+    <th bgcolor = "9999ff"><p><font color="white">Position</p></th>
+    <th bgcolor = "9999ff"><p><font color="white">Salary</p></th>
+    <th bgcolor = "9999ff"></th>
+    <th bgcolor = "9999ff"></th>
+    <th bgcolor = "9999ff"></th>
   </tr>
 
 <% @people.each do |person| %>
   <tr>
-    <td><%= person.title.name %></td>
-    <td><%= person.first_name %></td>
-    <td><%= person.other_names %></td>
-    <td><%= person.surname %></td>
-    <td><%= person.dob %></td>
-    <td><%= person.date_of_employment %></td>
-    <td><%= person.date_of_resignation %></td>
-    <td><%= person.salary.department %></td>
-    <td><%= number_to_currency(person.salary.salary, :unit => "&pound;") %></td>
-    <td><%= link_to 'Show', person %></td>
-    <td><%= link_to 'Edit', edit_person_path(person) %></td>
-    <td><%= link_to 'Destroy', person, confirm: 'Are you sure?', method: :delete %></td>
+    <td bgcolor = "#e2e2e2"><%= person.title.name %></td>
+    <td bgcolor = white><%= person.first_name %></td>
+    <td bgcolor = "#e2e2e2"><%= person.other_names %></td>
+    <td bgcolor = white><%= person.surname %></td>
+    <td bgcolor = "#e2e2e2"><%= person.dob %></td>
+    <td bgcolor = white><%= person.date_of_employment %></td>
+    <td bgcolor = "#e2e2e2"><%= person.date_of_resignation %></td>
+    <td bgcolor = white><%= person.salary.department %></td>
+    <td bgcolor = "#e2e2e2"><%= number_to_currency(person.salary.salary, :unit => "&pound;") %></td>
+    <td bgcolor = white><%= link_to 'Show', person %></td>
+    <td bgcolor = "#e2e2e2"><%= link_to 'Edit', edit_person_path(person) %></td>
+    <td bgcolor = white><%= link_to 'Destroy', person, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
+
+<h3>Search</h3>
+<form action ="people/search" method="post">
+<input name = "key" type="input" />
+<input value="Send" type="submit"/>
+</form>
 
 <%= link_to 'New Person', new_person_path %>

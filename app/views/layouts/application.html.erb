@@ -12,14 +12,13 @@
    <%= "Staff Record Application" %>
    </div>
 <header>
-<nav class="round">
-<ul>
-<li><%= link_to "Home", '#' %></li>
-<li><%= link_to "Help", '#' %></li>
-<li><%= link_to "Sign in", '#' %></li>
-</ul>
-</nav>
+<table border="2" width="800px" cellpadding = "5" align="center">
+<tr>
+<th> <%= link_to 'Home', pages_home_path %></th> <th><%= link_to 'Help Center', pages_help_path %></th> <th> <%= link_to 'Admin Contact', pages_contact_path %></th> <th><%= link_to 'Sign in','#'%></th></tr>
+</tr>
+</table><table width="100%"><tr><td align="center">
 </header>
+<table border="0" width="900"><tr><td align="left">
 <section class="round">
 <%= yield %>
 </section>

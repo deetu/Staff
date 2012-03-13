@@ -89,4 +89,8 @@ class PeopleController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def search
+  @person = Person.find(:all, :conditions => ["surname LIKE ? OR first_name LIKE ? OR salary_id LIKE ?", "%#{params[:key]}%","%#{params[:key]}%","%#{params[:key]}%"])
+  end
 end
