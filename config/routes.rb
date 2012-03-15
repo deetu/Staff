@@ -1,4 +1,12 @@
 Staff::Application.routes.draw do
+  get 'admin' => 'admin#index'
+  get "log_out" => "users#logout", :as => "log_out"
+  controller :sessions do
+    get  'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
   get "pages/home"
 
   get "pages/help"
@@ -14,6 +22,16 @@ Staff::Application.routes.draw do
   end
 
   resources :salaries
+  
+  resources :users
+  
+  get "users/new"
+  
+  get "sessions/new"
+  
+  get 'sessions/create'
+  
+  get 'sessions/home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
