@@ -23,11 +23,11 @@ class PersonTest < ActiveSupport::TestCase
   
   def test_peron_has_valid_email
     person = Person.new
-    assert !email.valid?
+    assert !person.valid?
   end
   
   def test_telephone_length
-    telephone = "xxxxxxxxx"
+    telephone = "xxxxxxxxxx"
     assert_equal(10, telephone.length)
   end
 end
