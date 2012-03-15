@@ -31,7 +31,7 @@ Staff::Application.routes.draw do
   
   get 'sessions/create'
   
-  get 'sessions/home'
+  get 'sessions/my_account'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
