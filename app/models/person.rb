@@ -12,14 +12,10 @@ class Person < ActiveRecord::Base
   validates_format_of :email, :with => /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i
   
   
-  validate :date_of_employment_date_of_resignation
+  #validate :date_of_employment_date_of_resignation
   mount_uploader :image, ImageUploader
   
-   
-  def date_of_employment_date_of_resignation
-    errors.add(:date_of_employment, "must be before Date of Resignation") unless
-       (self.date_of_employment).to_s > (self.date_of_resignation).to_s
-  end 
+  validates :image, allow_blank: false, format: {
+with: %r{\.(gif|jpg|png)$}i, message: 'must be a File with GIF, JPG or PNG image.'
+}
 end
-
-
